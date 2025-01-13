@@ -1,0 +1,2251 @@
+/* Custom animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient background */
+.bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
+/* Custom scrollbar for speakers grid */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.3);
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.5);
+}
+
+/* Particle animation container */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+}
+
+/* Ensure content stays above particles */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animated heading styles */
+.animated-heading {
+    position: relative;
+    display: inline-block;
+}
+
+.gradient-text {
+    background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animation 6s ease-in-out infinite;
+}
+
+.heading-underline {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+    transform: scaleX(0);
+    animation: underline-reveal 1.5s ease-in-out forwards;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes underline-reveal {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+/* Card Animations */
+
+/* Float Animation for Disposable Websites */
+.card-float {
+    transition: transform 0.5s ease;
+}
+
+.card-float:hover {
+    animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px) rotate(3deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(3deg); }
+}
+
+/* Pulse Animation for Business Websites */
+.card-pulse {
+    transition: transform 0.3s ease;
+}
+
+.card-pulse:hover {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(139, 92, 246, 0.3); }
+    100% { transform: scale(1); }
+}
+
+/* Shake Animation for Individual Websites */
+.card-shake {
+    transition: transform 0.3s ease;
+}
+
+.card-shake:hover {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px) rotate(-1deg); }
+    50% { transform: translateX(5px) rotate(1deg); }
+    75% { transform: translateX(-5px) rotate(-1deg); }
+    100% { transform: translateX(0); }
+}
+
+/* Flip Animation for E-commerce Websites */
+.card-flip {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.card-flip:hover {
+    animation: flip 1s ease-in-out;
+}
+
+@keyframes flip {
+    0% { transform: perspective(1000px) rotateY(0); }
+    50% { transform: perspective(1000px) rotateY(15deg) scale(1.1); }
+    100% { transform: perspective(1000px) rotateY(0) scale(1.05); }
+}
+
+/* Add glow effect on hover for all cards */
+.group:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* New Hero Animation Styles */
+.hero-title {
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: clamp(0.25em, 3vw, 0.5em);
+    margin-bottom: clamp(1rem, 5vw, 2rem);
+}
+
+.hero-title .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.hero-title .letters {
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+    animation: heroTextGlow 3s ease-in-out infinite;
+}
+
+.hero-title .line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #4f46e5, transparent);
+    transform-origin: 100% 100%;
+}
+
+.hero-title .line1 {
+    top: 0;
+    animation: heroLineLeft 3s ease-in-out infinite;
+}
+
+.hero-title .line2 {
+    bottom: 0;
+    animation: heroLineRight 3s ease-in-out infinite;
+}
+
+@keyframes heroTextGlow {
+    0% { 
+        text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(79, 70, 229, 0.5),
+                     0 0 30px rgba(79, 70, 229, 0.3);
+        transform: scale(1.05);
+    }
+    100% { 
+        text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+        transform: scale(1);
+    }
+}
+
+@keyframes heroLineLeft {
+    0% { transform: scaleX(0); }
+    50% { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
+}
+
+@keyframes heroLineRight {
+    0% { transform: scaleX(0); }
+    50% { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
+}
+
+/* Portfolio Slider Styles */
+.portfolioSwiper {
+    padding: clamp(20px, 5vw, 50px) 0;
+    height: 90vh;
+    width: 100%;
+    overflow: visible;
+}
+
+.portfolioSwiper .swiper-slide {
+    width: 800px;
+    height: 600px;
+    transition: transform 0.3s;
+    opacity: 0.4;
+    transform: scale(0.8);
+}
+
+.portfolioSwiper .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.portfolioSwiper .swiper-button-next,
+.portfolioSwiper .swiper-button-prev {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.portfolioSwiper .swiper-button-next:hover,
+.portfolioSwiper .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.portfolioSwiper .swiper-pagination-bullet {
+    background: white;
+}
+
+.portfolioSwiper .swiper-pagination-bullet-active {
+    background: #4f46e5;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    .grid {
+        gap: 1rem;
+    }
+
+    .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* E-commerce Website Mobile Optimizations */
+    .swiper-slide:nth-child(4) .rounded-lg.shadow-2xl {
+        display: flex;
+        flex-direction: column;
+        height: 100vh !important;
+    }
+
+    /* E-commerce Nav */
+    .swiper-slide:nth-child(4) nav {
+        padding: 0.75rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+    }
+
+    /* E-commerce Product Grid */
+    .swiper-slide:nth-child(4) .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    /* Product Cards */
+    .swiper-slide:nth-child(4) .bg-pink-900\/10 {
+        background: rgba(236, 72, 153, 0.05);
+        border: 1px solid rgba(236, 72, 153, 0.1);
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Product Image Container */
+    .swiper-slide:nth-child(4) .bg-pink-500\/10 {
+        aspect-ratio: 1;
+        height: auto !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    /* Product Icons */
+    .swiper-slide:nth-child(4) .text-5xl {
+        font-size: 2rem;
+    }
+
+    /* Product Details */
+    .swiper-slide:nth-child(4) .text-pink-400 {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    /* Product Prices */
+    .swiper-slide:nth-child(4) .flex.items-center.gap-2 {
+        margin: 0.25rem 0;
+    }
+
+    /* Add to Cart Button */
+    .swiper-slide:nth-child(4) button {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: auto;
+    }
+
+    /* Categories */
+    .swiper-slide:nth-child(4) .flex.gap-4:not(.justify-center) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    /* Disposable Website Mobile Optimizations */
+    .swiper-slide:nth-child(1) .rounded-lg.shadow-2xl {
+        display: flex;
+        flex-direction: column;
+        height: 100vh !important;
+    }
+
+    /* Event Nav */
+    .swiper-slide:nth-child(1) nav {
+        padding: 0.75rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+    }
+
+    /* Event Hero Section */
+    .swiper-slide:nth-child(1) .p-8.text-center {
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Countdown Timer */
+    .swiper-slide:nth-child(1) .flex.justify-center.gap-4 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    /* Timer Boxes */
+    .swiper-slide:nth-child(1) .bg-blue-900\/20.px-6 {
+        padding: 0.75rem;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    /* Speakers Grid */
+    .swiper-slide:nth-child(1) .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    /* Speaker Cards */
+    .swiper-slide:nth-child(1) .bg-blue-900\/10 {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Registration Section */
+    .swiper-slide:nth-child(1) .px-8:last-child {
+        padding: 0.75rem;
+        margin-top: auto;
+    }
+
+    .swiper-slide:nth-child(1) .bg-blue-900\/20.p-6 {
+        padding: 1rem;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    /* Registration Button */
+    .swiper-slide:nth-child(1) .bg-blue-500 {
+        width: auto;
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+    }
+
+    .portfolioSwiper {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .portfolioSwiper .swiper-slide {
+        width: 100%;
+        height: auto;
+    }
+
+    .portfolioSwiper .swiper-button-next,
+    .portfolioSwiper .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .portfolioSwiper .swiper-slide {
+        width: 100% !important;
+    }
+
+    /* Improve touch targets */
+    button, 
+    a {
+        min-height: 44px;
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    /* Adjust spacing */
+    .gap-4 {
+        gap: 0.75rem;
+    }
+
+    .mb-16 {
+        margin-bottom: 2rem;
+    }
+
+    /* Make grids single column */
+    .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Adjust text sizes */
+    .text-4xl {
+        font-size: 1.75rem;
+    }
+
+    /* Category tags */
+    .flex.gap-4:not(.justify-center) {
+        flex-wrap: wrap;
+    }
+
+    /* Further optimize layouts */
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Adjust preview heights */
+    .rounded-lg.shadow-2xl {
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    /* Optimize spacing */
+    .p-6, .p-8 {
+        padding: 1rem !important;
+    }
+
+    /* Make buttons more prominent */
+    .bg-blue-500,
+    .bg-purple-500,
+    .bg-green-500,
+    .bg-pink-500 {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    /* Improve scroll experience */
+    .rounded-lg.shadow-2xl {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .rounded-lg.shadow-2xl::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Landscape mode optimizations */
+@media (max-height: 600px) and (orientation: landscape) {
+    .portfolioSwiper {
+        height: 100vh;
+    }
+
+    .rounded-lg.shadow-2xl {
+        min-height: 90vh;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        padding: 0.25em;
+    }
+}
+
+/* Mobile-First Slider Website Layouts */
+@media (max-width: 480px) {
+    /* Common Slider Styles */
+    .portfolioSwiper {
+        padding: 0;
+        height: 100vh;
+    }
+
+    .swiper-slide {
+        transform-origin: center center;
+        transition: transform 0.6s ease;
+    }
+
+    .swiper-slide-active {
+        transform: scale(1);
+    }
+
+    .swiper-slide-prev,
+    .swiper-slide-next {
+        transform: scale(0.85);
+    }
+
+    /* Website Preview Container */
+    .swiper-slide .rounded-lg.shadow-2xl {
+        height: 100%;
+        border-radius: 0;
+        overflow: hidden;
+        background: #111827;
+        position: relative;
+    }
+
+    /* Event/Conference Website (First Slide) */
+    .swiper-slide:nth-child(1) {
+        /* Event Header */
+        nav {
+            height: 60px;
+            padding: 0 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Event Hero */
+        .hero-section {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(37, 99, 235, 0.2), transparent);
+        }
+
+        /* Countdown Grid */
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            padding: 0 1rem;
+        }
+
+        /* Countdown Box */
+        .countdown-box {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+
+        /* Speakers Section */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            padding: 1rem;
+        }
+
+        /* Speaker Card */
+        .speaker-card {
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+        }
+    }
+
+    /* Business Website (Second Slide) */
+    .swiper-slide:nth-child(2) {
+        /* Business Header */
+        nav {
+            height: 60px;
+            padding: 0 1rem;
+            background: rgba(147, 51, 234, 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Business Hero */
+        .hero-section {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(147, 51, 234, 0.2), transparent);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        /* Service Card */
+        .service-card {
+            background: rgba(147, 51, 234, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+    }
+
+    /* E-commerce Website (Third Slide) */
+    .swiper-slide:nth-child(4) {
+        /* Shop Header */
+        nav {
+            height: 60px;
+            padding: 0 1rem;
+            background: rgba(236, 72, 153, 0.1);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            padding: 1rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: rgba(236, 72, 153, 0.1);
+            border-radius: 1rem;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Product Image */
+        .product-image {
+            aspect-ratio: 1;
+            background: rgba(236, 72, 153, 0.05);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    /* Common Mobile Elements */
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: rgba(17, 24, 39, 0.95);
+        backdrop-filter: blur(8px);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav-item {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .mobile-nav-item.active {
+        color: white;
+    }
+
+    /* Mobile Typography */
+    h1 { 
+        font-size: 1.5rem !important; 
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+    
+    h2 { 
+        font-size: 1.25rem !important; 
+        margin-bottom: 1rem;
+    }
+    
+    h3 { 
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    p { 
+        font-size: 0.875rem !important;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Add mobile-friendly navigation */
+.swiper-slide nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Add hamburger menu for mobile */
+.nav-toggle {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: none;
+}
+
+/* Smooth scrolling for content */
+.website-content {
+    height: calc(100dvh - 60px); /* Subtract nav height */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Better grid layouts for mobile */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+/* Card improvements */
+.card {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+/* Better touch targets */
+button, 
+a.action-button {
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    touch-action: manipulation;
+}
+
+/* Add loading states */
+.swiper-slide {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+}
+
+/* Loading skeleton */
+.loading-skeleton {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.05), 
+        rgba(255,255,255,0.1), 
+        rgba(255,255,255,0.05)
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+/* Mobile E-commerce Website Layout */
+@media (max-width: 480px) {
+    /* E-commerce Website Container */
+    .swiper-slide:nth-child(4) .rounded-lg.shadow-2xl {
+        height: 100vh !important;
+        background: #111827;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    /* Top Navigation Bar */
+    .swiper-slide:nth-child(4) nav {
+        height: 60px;
+        padding: 0 1rem;
+        background: rgba(236, 72, 153, 0.1);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    /* Store Logo */
+    .swiper-slide:nth-child(4) .text-xl {
+        font-size: 1.25rem;
+        font-weight: 600;
+        background: linear-gradient(to right, #ec4899, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Shopping Cart Icon */
+    .swiper-slide:nth-child(4) .fa-shopping-cart {
+        font-size: 1.25rem;
+        color: #ec4899;
+    }
+
+    /* Main Content Area */
+    .swiper-slide:nth-child(4) .content-area {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Categories Scroll */
+    .swiper-slide:nth-child(4) .categories {
+        display: flex;
+        gap: 0.75rem;
+        padding: 0.5rem 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin: 0 -1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .categories::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Category Pills */
+    .swiper-slide:nth-child(4) .category-pill {
+        padding: 0.5rem 1rem;
+        background: rgba(236, 72, 153, 0.1);
+        border: 1px solid rgba(236, 72, 153, 0.2);
+        border-radius: 9999px;
+        white-space: nowrap;
+        color: #ec4899;
+        font-size: 0.875rem;
+    }
+
+    .category-pill.active {
+        background: #ec4899;
+        color: white;
+    }
+
+    /* Products Grid */
+    .swiper-slide:nth-child(4) .products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    /* Product Card */
+    .swiper-slide:nth-child(4) .product-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(236, 72, 153, 0.1);
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Product Image Container */
+    .swiper-slide:nth-child(4) .product-image {
+        aspect-ratio: 1;
+        background: rgba(236, 72, 153, 0.05);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Product Icon */
+    .swiper-slide:nth-child(4) .product-image i {
+        font-size: 2rem;
+        color: rgba(236, 72, 153, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Product Details */
+    .swiper-slide:nth-child(4) .product-details {
+        padding: 0.75rem;
+    }
+
+    /* Product Title */
+    .swiper-slide:nth-child(4) .product-title {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Product Price */
+    .swiper-slide:nth-child(4) .product-price {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .product-price .original {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: line-through;
+        font-size: 0.75rem;
+    }
+
+    .product-price .discounted {
+        color: #ec4899;
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+
+    /* Add to Cart Button */
+    .swiper-slide:nth-child(4) .add-to-cart {
+        width: 100%;
+        background: rgba(236, 72, 153, 0.1);
+        border: 1px solid rgba(236, 72, 153, 0.2);
+        color: #ec4899;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .add-to-cart:active {
+        background: rgba(236, 72, 153, 0.2);
+        transform: scale(0.98);
+    }
+
+    /* Bottom Navigation */
+    .swiper-slide:nth-child(4) .bottom-nav {
+        height: 60px;
+        background: rgba(17, 24, 39, 0.95);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    /* Nav Items */
+    .swiper-slide:nth-child(4) .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.75rem;
+    }
+
+    .nav-item i {
+        font-size: 1.25rem;
+    }
+
+    .nav-item.active {
+        color: #ec4899;
+    }
+}
+
+/* Mobile E-commerce Styles (Only affects mobile views) */
+@media (max-width: 768px) {
+    .mobile-ecommerce {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: #111827;
+    }
+
+    .mobile-header {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(236, 72, 153, 0.1);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .store-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        background: linear-gradient(45deg, #ec4899, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .cart-icon {
+        position: relative;
+        color: #ec4899;
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #ec4899;
+        color: white;
+        font-size: 0.75rem;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-categories {
+        display: flex;
+        gap: 0.75rem;
+        padding: 1rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .mobile-categories::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category {
+        padding: 0.5rem 1rem;
+        background: rgba(236, 72, 153, 0.1);
+        border: 1px solid rgba(236, 72, 153, 0.2);
+        border-radius: 9999px;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+    }
+
+    .category.active {
+        background: #ec4899;
+        color: white;
+    }
+
+    .mobile-products {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .mobile-product {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(236, 72, 153, 0.1);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .product-img {
+        aspect-ratio: 1;
+        background: rgba(236, 72, 153, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .product-img i {
+        font-size: 2rem;
+        color: rgba(236, 72, 153, 0.5);
+    }
+
+    .product-tag {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: #ec4899;
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 9999px;
+    }
+
+    .product-info {
+        padding: 0.75rem;
+    }
+
+    .product-info h3 {
+        font-size: 0.875rem;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+    .price {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .old-price {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: line-through;
+        font-size: 0.75rem;
+    }
+
+    .current-price {
+        color: #ec4899;
+        font-weight: 600;
+    }
+
+    .add-cart-btn {
+        width: 100%;
+        background: rgba(236, 72, 153, 0.1);
+        border: 1px solid rgba(236, 72, 153, 0.2);
+        color: #ec4899;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 0.75rem 1rem;
+        background: rgba(17, 24, 39, 0.95);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.75rem;
+    }
+
+    .nav-item.active {
+        color: #ec4899;
+    }
+
+    .nav-item i {
+        font-size: 1.25rem;
+    }
+}
+
+/* Mobile-First Design for Disposable/Event Website */
+@media (max-width: 480px) {
+    .swiper-slide:nth-child(1) .rounded-lg.shadow-2xl {
+        height: 100vh !important;
+        background: #0f172a;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    /* Event Header */
+    .swiper-slide:nth-child(1) nav {
+        height: 60px;
+        background: rgba(59, 130, 246, 0.05);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.25rem;
+    }
+
+    /* Hero Section */
+    .swiper-slide:nth-child(1) .hero-section {
+        min-height: 50vh;
+        background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.2));
+        padding: 2rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Event Title */
+    .swiper-slide:nth-child(1) .hero-section h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #60a5fa, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    /* Event Description */
+    .swiper-slide:nth-child(1) .hero-section p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    /* Countdown Container */
+    .swiper-slide:nth-child(1) .countdown {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Time Box */
+    .swiper-slide:nth-child(1) .time-box {
+        flex: 1;
+        aspect-ratio: 1;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+    }
+
+    .time-box .number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #3b82f6;
+        margin-bottom: 0.25rem;
+    }
+
+    .time-box .label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* Speakers Section */
+    .swiper-slide:nth-child(1) .speakers {
+        padding: 2rem 1.25rem;
+    }
+
+    .speakers-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: white;
+    }
+
+    /* Speakers Grid */
+    .swiper-slide:nth-child(1) .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* Speaker Card */
+    .swiper-slide:nth-child(1) .speaker-card {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        border-radius: 1rem;
+        padding: 1rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .speaker-card:active {
+        transform: scale(0.98);
+    }
+
+    /* Speaker Image */
+    .speaker-card .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: rgba(59, 130, 246, 0.1);
+        margin: 0 auto 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .avatar i {
+        font-size: 1.5rem;
+        color: #3b82f6;
+    }
+
+    /* Speaker Info */
+    .speaker-card .name {
+        font-size: 1rem;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 0.25rem;
+    }
+
+    .speaker-card .role {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Register Section */
+    .swiper-slide:nth-child(1) .register {
+        padding: 2rem 1.25rem;
+        background: rgba(59, 130, 246, 0.05);
+        border-top: 1px solid rgba(59, 130, 246, 0.1);
+        text-align: center;
+    }
+
+    /* Register Button */
+    .swiper-slide:nth-child(1) .register-btn {
+        width: 100%;
+        background: linear-gradient(45deg, #3b82f6, #2563eb);
+        color: white;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        font-weight: 500;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: opacity 0.3s ease;
+    }
+
+    .register-btn:active {
+        opacity: 0.9;
+    }
+}
+
+/* Mobile Event Website Styles */
+@media (max-width: 480px) {
+    .mobile-event {
+        height: 100vh;
+        background: #0a0a0a;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    /* Header */
+    .mobile-event-header {
+        height: 60px;
+        padding: 0 20px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .mobile-event-header h1 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #60a5fa, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Main Content */
+    .mobile-event-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    /* Hero Banner */
+    .event-hero {
+        text-align: center;
+        padding: 40px 0;
+        background: linear-gradient(45deg, 
+            rgba(59, 130, 246, 0.1), 
+            rgba(37, 99, 235, 0.05)
+        );
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+
+    .event-tag {
+        display: inline-block;
+        padding: 6px 12px;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 20px;
+        color: #60a5fa;
+        font-size: 0.875rem;
+        margin-bottom: 16px;
+    }
+
+    .event-hero h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .event-date {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+        margin-bottom: 24px;
+    }
+
+    .register-btn {
+        background: #3b82f6;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+
+    /* Countdown */
+    .event-countdown {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .countdown-item {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        border-radius: 16px;
+        padding: 16px;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .countdown-item .number {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #3b82f6;
+        margin-bottom: 4px;
+    }
+
+    .countdown-item .label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Bottom Navigation */
+    .mobile-nav {
+        height: 65px;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        bottom: 0;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.75rem;
+    }
+
+    .nav-item i {
+        font-size: 1.25rem;
+    }
+
+    .nav-item.active {
+        color: #3b82f6;
+    }
+}
+
+/* Mobile Website Preview Styles */
+@media (max-width: 480px) {
+    .swiper-slide .rounded-lg.shadow-2xl {
+        height: 100% !important;
+        max-height: 85vh;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #111827;
+        margin: 20px;
+        position: relative;
+    }
+
+    /* Website Header */
+    .website-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 1rem;
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Website Content */
+    .website-content {
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem;
+    }
+
+    /* Grid Layouts */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    /* Cards */
+    .card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 1rem;
+    }
+}
+
+/* E-commerce Website */
+.ecommerce-preview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ecommerce-header {
+    background: rgba(236, 72, 153, 0.1);
+}
+
+.ecommerce-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Event Website */
+.event-preview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.event-header {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.event-content {
+    padding: 1rem;
+}
+
+/* Add similar styles for Business and Individual websites */
+
+/* Business Website Background Animations */
+@keyframes blob {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(20px, -20px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(20px, 20px) scale(1.05);
+    }
+}
+
+@keyframes grid-movement {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-64px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes line-left {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes line-right {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes line-up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes line-down {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes corner-tl {
+    0%, 100% {
+        opacity: 0.2;
+        transform: translate(-4px, -4px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes corner-tr {
+    0%, 100% {
+        opacity: 0.2;
+        transform: translate(4px, -4px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes corner-bl {
+    0%, 100% {
+        opacity: 0.2;
+        transform: translate(-4px, 4px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes corner-br {
+    0%, 100% {
+        opacity: 0.2;
+        transform: translate(4px, 4px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.animate-blob {
+    animation: blob 10s infinite;
+}
+
+.animate-grid-movement {
+    animation: grid-movement 20s linear infinite;
+}
+
+.animate-glow {
+    animation: glow 3s ease-in-out infinite;
+}
+
+.animate-line-left {
+    animation: line-left 8s linear infinite;
+}
+
+.animate-line-right {
+    animation: line-right 8s linear infinite;
+}
+
+.animate-line-up {
+    animation: line-up 8s linear infinite;
+}
+
+.animate-line-down {
+    animation: line-down 8s linear infinite;
+}
+
+.animate-corner-tl {
+    animation: corner-tl 4s ease-in-out infinite;
+}
+
+.animate-corner-tr {
+    animation: corner-tr 4s ease-in-out infinite;
+}
+
+.animate-corner-bl {
+    animation: corner-bl 4s ease-in-out infinite;
+}
+
+.animate-corner-br {
+    animation: corner-br 4s ease-in-out infinite;
+}
+
+.animation-delay-1000 {
+    animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+    animation-delay: 3s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Portfolio Slider Styles */
+.portfolioSwiper {
+    padding: clamp(20px, 5vw, 50px) 0;
+    height: 90vh;
+    width: 100%;
+    overflow: visible;
+}
+
+.portfolioSwiper .swiper-slide {
+    width: 800px;
+    height: 600px;
+    transition: transform 0.3s;
+    opacity: 0.4;
+    transform: scale(0.8);
+}
+
+.portfolioSwiper .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mobile Optimization for Portfolio Examples */
+@media (max-width: 768px) {
+    /* Common improvements for all example websites */
+    .portfolioSwiper .swiper-slide {
+        min-height: 100vh !important;
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .swiper-slide .rounded-lg.shadow-2xl {
+        min-height: 100vh !important;
+        margin: 0;
+        border-radius: 0;
+        background: rgba(17, 24, 39, 0.98);
+    }
+
+    /* Improved navigation for all examples */
+    .swiper-slide nav {
+        height: 60px;
+        padding: 0 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Content area improvements */
+    .website-content {
+        padding-top: 60px; /* Account for fixed nav */
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Specific improvements for Event Website */
+    .swiper-slide:nth-child(1) {
+        .hero-section {
+            padding: 2rem 1rem;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(59, 130, 246, 0.1), transparent);
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            padding: 0 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .speaker-card {
+            aspect-ratio: 1;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            border-radius: 1rem;
+        }
+    }
+
+    /* Specific improvements for Business Website */
+    .swiper-slide:nth-child(2) {
+        .hero-section {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(147, 51, 234, 0.1), transparent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .service-card {
+            aspect-ratio: 1;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(147, 51, 234, 0.05);
+            border: 1px solid rgba(147, 51, 234, 0.1);
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            padding: 1rem;
+        }
+    }
+
+    /* Specific improvements for Individual Website */
+    .swiper-slide:nth-child(3) {
+        .hero-section {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(34, 197, 94, 0.1), transparent);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            padding: 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .project-card {
+            aspect-ratio: 1;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.1);
+            border-radius: 1rem;
+        }
+    }
+
+    /* Specific improvements for E-commerce Website */
+    .swiper-slide:nth-child(4) {
+        .hero-section {
+            padding: 1rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(236, 72, 153, 0.1), transparent);
+        }
+
+        .categories-scroll {
+            display: flex;
+            gap: 0.75rem;
+            padding: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+
+        .categories-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-pill {
+            scroll-snap-align: start;
+            padding: 0.5rem 1rem;
+            background: rgba(236, 72, 153, 0.05);
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            background: rgba(236, 72, 153, 0.05);
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .product-image {
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+            background: rgba(236, 72, 153, 0.02);
+        }
+
+        .product-details {
+            padding: 1rem;
+        }
+    }
+
+    /* Enhanced touch feedback */
+    .swiper-slide button,
+    .swiper-slide a {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .swiper-slide button:active,
+    .swiper-slide a:active {
+        transform: scale(0.98);
+    }
+
+    /* Improved scrolling experience */
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+}
+
+/* Additional optimizations for smaller screens */
+@media (max-width: 380px) {
+    .swiper-slide .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .swiper-slide h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .swiper-slide h2 {
+        font-size: 1.25rem !important;
+    }
+
+    .swiper-slide p {
+        font-size: 0.875rem !important;
+    }
+
+    .swiper-slide .stats-grid,
+    .swiper-slide .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Landscape mode optimizations */
+@media (max-height: 500px) and (orientation: landscape) {
+    .swiper-slide nav {
+        position: absolute;
+    }
+
+    .website-content {
+        padding-top: 0;
+    }
+
+    .swiper-slide .grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .swiper-slide .hero-section {
+        min-height: auto !important;
+        padding: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolioSwiper {
+        padding: 20px 0;
+    }
+
+    .portfolioSwiper .swiper-slide {
+        width: 100% !important;
+    }
+
+    /* Adjust the preview container size */
+    .swiper-slide .rounded-lg.shadow-2xl {
+        width: 100% !important;
+        height: 85vh !important;
+        max-height: 600px;
+        transform: none !important;
+        margin: 0 auto;
+    }
+
+    /* Adjust internal spacing */
+    .swiper-slide nav {
+        padding: 0.75rem !important;
+    }
+
+    /* Adjust grid layouts */
+    .swiper-slide .grid-cols-3,
+    .swiper-slide .grid-cols-4,
+    .swiper-slide .grid-cols-5,
+    .swiper-slide .grid-cols-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Adjust font sizes */
+    .swiper-slide h3 {
+        font-size: 1rem !important;
+    }
+
+    .swiper-slide p {
+        font-size: 0.875rem !important;
+    }
+
+    /* Specific adjustments for each preview */
+    
+    /* Event Website */
+    .swiper-slide:nth-child(1) .rounded-lg.shadow-2xl {
+        font-size: 14px;
+    }
+
+    /* Business Website */
+    .swiper-slide:nth-child(2) .rounded-lg.shadow-2xl {
+        font-size: 14px;
+    }
+
+    /* Individual Website */
+    .swiper-slide:nth-child(3) .rounded-lg.shadow-2xl {
+        font-size: 14px;
+    }
+
+    /* E-commerce Website */
+    .swiper-slide:nth-child(4) .rounded-lg.shadow-2xl {
+        font-size: 14px;
+    }
+
+    /* Adjust scrollable areas */
+    .custom-scrollbar {
+        max-height: 150px !important;
+    }
+
+    /* Ensure content stays within viewport */
+    .website-content {
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+/* Add specific landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .swiper-slide .rounded-lg.shadow-2xl {
+        height: 90vh !important;
+        max-height: 450px;
+    }
+}
